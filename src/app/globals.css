@@ -59,6 +59,10 @@
   }
 }
 
+.markdown > * {
+  all: revert;
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -24,8 +24,7 @@ import { SendIcon, SquareIcon } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-//import ReactMarkdown from "react-markdown";
-// import Markdown from "react-markdown";
+import Markdown from "react-markdown";
 
 export function Chatbot() {
   const { messages, input, handleInputChange, handleSubmit, isLoading, stop } =
@@ -52,12 +51,12 @@ export function Chatbot() {
                   <Image src="/ai.png" alt="AI" width={40} height={40} />
                 </div>
                 <div className="bg-muted rounded-lg p-3 max-w-[70%]">
-                  <p className="text-sm text-muted-foreground">
+                  {/* <p className="text-sm text-muted-foreground">
                     {message.content}
-                  </p>
-                  {/* <Markdown className="text-sm text-muted-foreground">
+                  </p> */}
+                  <Markdown className="text-sm text-muted-foreground markdown">
                     {message.content}
-                  </Markdown> */}
+                  </Markdown>
                 </div>
               </div>
             ) : (
@@ -84,6 +83,7 @@ export function Chatbot() {
             rows={2}
             value={input}
             onChange={handleInputChange}
+            onKeyDown={(e) => (e.key === "Enter" ? handleSubmit(e) : null)}
           />
 
           {!isLoading ? (
