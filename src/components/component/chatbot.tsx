@@ -33,7 +33,7 @@ export function Chatbot() {
       api: "api/chat",
     });
   return (
-    <div className="flex flex-col h-[80vh]  w-full max-w-[672px] mx-auto bg-background rounded-lg shadow-lg">
+    <div className="flex flex-col h-[80vh]  w-full max-w-[336px] md:max-w-[672px]  mx-auto bg-background rounded-lg shadow-lg">
       <div className="flex-1 overflow-auto p-6">
         {messages.length === 0 && (
           <div className="flex flex-col justify-center items-center h-full">
